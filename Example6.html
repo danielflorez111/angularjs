@@ -1,0 +1,102 @@
+<html lang="en" >
+   <head>
+      <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <style>
+     .box {         
+      color:white;
+      padding:10px;
+      text-align:center;
+      border-style: inset;
+     }
+     .green {
+         background:green;
+     }
+     .blue {
+         background:blue;
+     }
+    </style>
+
+      <script language="javascript">
+          angular
+            .module('firstApplication', ['ngMaterial'])
+            .controller('layoutController', layoutController);
+
+          function layoutController ($scope) {            
+          }   
+      </script>   
+
+   </head>
+
+   <body ng-app="firstApplication">
+
+	<div layout="row" layout-wrap>
+	  <div flex="none" class="green box">
+	    [flex="none"]
+	  </div>
+	  <div flex class="blue box">
+	    [flex]
+	  </div>
+	  <div flex="nogrow" class="green box">
+	    [flex="nogrow"]
+	  </div>
+	  <div flex="grow" class="blue box">
+	    [flex="grow"]
+	  </div>
+	  <div flex="initial" class="green box">
+	    [flex="initial"]
+	  </div>
+	  <div flex="auto" class="blue box">
+	    [flex="auto"]
+	  </div>
+	  <div flex="noshrink" class="green box">
+	    [flex="noshrink"]
+	  </div>
+	  <div flex="0" class="blue box">
+	    [flex="0"]
+	  </div>
+	</div>
+
+	<br>
+	<br>
+	<br>
+
+	<div layout="row">
+	  <div flex flex-order="-1" class="blue box">
+	    <p>[flex-order="-1"]</p>
+	  </div>
+	  <div flex flex-order="1" flex-order-gt-md="3" class="blue box">
+	    <p hide-gt-md>[flex-order="1"]</p>
+	    <p hide show-gt-md>[flex-order-gt-md="3"]</p>
+	  </div>
+	  <div flex flex-order="2" class="blue box">
+	    <p>[flex-order="2"]</p>
+	  </div>
+	  <div flex flex-order="3" flex-order-gt-md="1" class="green box">
+	    <p hide-gt-md>[flex-order="3"]</p>
+	    <p hide show-gt-md>[flex-order-gt-md="1"]</p>
+	  </div>
+	</div>
+
+	<br>
+	<br>
+	<br>
+
+	<div layout="row">
+	  <div flex="66" flex-offset="15" class="green box">
+	    [flex-offset="15"]
+	    [flex="66"]
+	  </div>
+	  <div flex class="blue box">
+	    [flex]
+	  </div>
+	</div>
+
+   </body>
+</html>

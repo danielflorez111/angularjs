@@ -1,0 +1,65 @@
+<html lang="en" >
+   <head>
+      <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <style>
+     .box {         
+      color:white;
+      padding:10px;
+      text-align:center;
+      border-style: inset;
+     }
+     .green {
+         background:green;
+     }
+     .blue {
+         background:blue;
+     }
+          .gray {
+         background:gray;
+     }
+          .red {
+         background:red;
+     }
+          .yellow {
+         background:yellow;
+     }
+    </style>
+
+      <script language="javascript">
+          angular
+            .module('firstApplication', ['ngMaterial'])
+            .controller('layoutController', layoutController);
+
+          function layoutController ($scope) {            
+          }   
+      </script>   
+
+   </head>
+
+   <body ng-app="firstApplication"> 
+
+
+   <div layout="column">
+      <div class="green box" layout="row" flex="15" hide-xs>HEADER</div>
+      <div layout="row" layout-sm="column" layout-xs="column" flex="70" flex-xs="100">
+        <div class="red box" flex="33" flex-sm="100" flex-xs="100">1</div>
+        <div class="yellow box" flex="33" flex-sm="100" flex-xs="100">2</div>
+        <div class="gray box" flex="33" flex-sm="100" flex-xs="100">3</div>
+      </div>
+
+      <div class="blue box" layout="row" flex="15" hide-xs>FOTTER</div>
+
+   </div>
+
+
+
+
+   </body>
+</html>
