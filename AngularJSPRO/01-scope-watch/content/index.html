@@ -5,8 +5,21 @@
 	</head>
 	<body>
 
+		<div class="counter" ng-controller="CounterController">
 
+			<h3>Counter: {{ count }}</h3>
+			
+			<a class="counter_increment" href="" ng-click="increment()">
+				Increment counter	 
+			</a>
 
+			-
+
+			<a class="counter_decrement" href="" ng-click="decrement()">
+				Decrement counter 	
+			</a> 
+
+		</div>
 
 	
 		<script src="js/app.js"></script>
