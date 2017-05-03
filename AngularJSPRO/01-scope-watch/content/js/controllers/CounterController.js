@@ -1,20 +1,26 @@
 function CounterController($scope) {
-    $scope.count = 0;
+    this.count = 0;
+    this.countList = [];
 
-    $scope.increment = function increment() {
-        $scope.count++;
+    this.increment = function increment() {
+        this.count++;
+        this.countList.unshift({id: this.count});
     };
 
-    $scope.decrement = function decrement() {
-        $scope.count--;
+    this.decrement = function decrement() {
+        this.count--;
+        this.countList.unshift({id: this.count});
     };
 
-    $scope.$watch("count", function(newValue, oldValue) {
+    $scope.$watchCollection(angular.bind(this, function () {
+        return this.countList;
+    }), function(newValue, oldValue) {
+        if (newValue === oldValue) {
+            return;
+        }
         console.log(newValue, oldValue);
 
     });
-
-
 
 }
 

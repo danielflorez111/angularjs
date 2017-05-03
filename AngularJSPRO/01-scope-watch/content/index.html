@@ -5,19 +5,25 @@
 	</head>
 	<body>
 
-		<div class="counter" ng-controller="CounterController">
+		<div class="counter" ng-controller="CounterController as counter">
 
-			<h3>Counter: {{ count }}</h3>
+			<h3>Counter: {{ counter.count }}</h3>
 			
-			<a class="counter_increment" href="" ng-click="increment()">
+			<a class="counter_increment" href="" ng-click="counter.increment()">
 				Increment counter	 
 			</a>
 
 			-
 
-			<a class="counter_decrement" href="" ng-click="decrement()">
+			<a class="counter_decrement" href="" ng-click="counter.decrement()">
 				Decrement counter 	
 			</a> 
+
+			<ul>
+				<li ng-repeat="list in counter.countList">
+					<input type="text" ng-model="list.id">
+				</li>
+			</ul>
 
 		</div>
 
