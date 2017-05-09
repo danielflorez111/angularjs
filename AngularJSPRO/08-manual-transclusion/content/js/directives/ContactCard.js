@@ -12,7 +12,7 @@ function ContactCard() {
             var div = $element.find("div");
             var span = $element.find("span");
             var cloned = $transclude(function(elements) {
-                elements[1].textContent = elements[1].textContent.toUpperCase();s 
+                elements[1].textContent = elements[1].textContent.toUpperCase();
             });
             span.append(cloned[1]);
             div.append(cloned[3]);
