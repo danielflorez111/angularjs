@@ -1,0 +1,60 @@
+<html ng-app="app">
+	<head>
+		<title>My Angular app</title>
+		<!--script src="js/angular.js"></script-->
+
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+      	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+      	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+      	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+      	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+      	<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+	  	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+	</head>
+
+	<body ng-controller="ChipsController as ctrl">
+
+	<div layout="column" ng-cloak="">
+		<md-content class="md-padding" layout="column">
+			<md-chips ng-model="ctrl.names" readonly="ctrl.readonly" md-transform-chip="ctrl.addName($chip)" md-require-match="ctrl.requireMatch">
+				<md-autocomplete 
+					md-selected-item="selectedItem" 
+					md-items="item in ctrl.querySearch(ctrl.searchText)" 
+					md-search-text="ctrl.searchText" 
+					md-item-text="item"
+					md-min-length="0">
+
+					<span>{{ item }}</span>
+
+				</md-autocomplete>
+			</md-chips>
+		</md-content>
+	</div>
+
+	<div layout="row">
+		<div>
+			<md-button class="md-raised md-primary" ng-click="ctrl.createSelect()">Create select</md-button>
+		</div>
+		<p>
+			<md-checkbox ng-model="ctrl.requireMatch">
+				Match?
+			</md-checkbox>
+		</p>		
+	</div>
+	
+	<div layout="row" ng-if="ctrl.selectNames.length > 0">
+		<md-input-container>
+			<md-select ng-model="ctrl.name" placeholder="Select a name">
+				<md-option ng-value="name" ng-repeat="name in ctrl.selectNames">{{ name }}</md-option>
+			</md-select>
+		</md-input-container>
+		<div>
+			<md-button class="md-raised md-primary" ng-click="ctrl.printSelectedName()">Add to list</md-button>
+		</div>
+	</div>
+
+		<script src="js/app.js"></script>
+		<script src="js/controllers/ChipsController.js"></script>
+	</body>
+</html>
