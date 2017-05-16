@@ -50,8 +50,21 @@
 			</md-select>
 		</md-input-container>
 		<div>
-			<md-button class="md-raised md-primary" ng-click="ctrl.printSelectedName()">Add to list</md-button>
+			<md-button class="md-raised md-primary" ng-click="ctrl.addToList()">Add to list</md-button>
 		</div>
+	</div>
+
+	<div layout="row" ng-if="ctrl.listNames.length > 0">
+		<md-list>
+			<md-list-item class="md-2-line" ng-repeat="name in ctrl.listNames">
+				<div class="md-list-item-text">
+					<p>{{ name }}</p>
+				</div>
+				<div>
+					<md-button class="md-raised md-primary" ng-click="ctrl.removeFromList(name)">Remove</md-button>
+				</div>
+			</md-list-item>
+		</md-list>
 	</div>
 
 		<script src="js/app.js"></script>
