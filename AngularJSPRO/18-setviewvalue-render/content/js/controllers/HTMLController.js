@@ -1,6 +1,6 @@
 function HTMLController() {
 	this.reset = function () {
-		this.content = 'HOla';
+		this.content = '';
 	};
 }
 

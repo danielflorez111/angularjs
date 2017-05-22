@@ -1,0 +1,31 @@
+<html ng-app="app">
+    <head>
+        <title>My Angular app</title>
+        <script src="js/angular.js"></script>
+        <script src="js/angular-messages.js"></script>
+		<style>
+			div[contenteditable] {
+				background: rgba(0, 0, 0, 0.1);
+				padding: 10px 15px;
+				border-radius: 5px;
+				border: 1px solid rgba(0, 0, 0, 0.1);
+			}
+		    form .ng-touched.ng-invalid {
+			    border: 1px solid red;
+		    }
+		</style>
+    </head>
+    <body>
+
+        <component-parent>
+
+        </component-parent>
+
+    <script src="js/app.js"></script>
+    <script src="js/controllers/Controller.js"></script>
+    <script src="js/components/ComponentParent.js"></script>
+    <script src="js/components/ComponentChild1.js"></script>
+    <script src="js/components/ComponentChild2.js"></script>
+    <script src="js/directives/format.js"></script>
+    </body>
+</html>
