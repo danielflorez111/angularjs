@@ -14,4 +14,4 @@ var output = fs.readFileSync("data.txt", "utf8")
         return customers        
     }, {})
 
-console.log("output", JSON.stringify(output, null, 2))
+console.log("output", JSON.stringify(output, null, 2));
