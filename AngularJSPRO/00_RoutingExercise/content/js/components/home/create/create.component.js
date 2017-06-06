@@ -1,41 +1,44 @@
 var create = {
     template: `
-        <div>Phone: 321 752 8197</div>
+		<div>
 
-        		<div>
-			Filter by:
-			<a href="" ng-click="position = undefined">All</a>
-			<a href="" ng-click="position = 'boss'">Boss</a>
-			<a href="" ng-click="position = 'coworker'">Coworker</a>
+			<button class="button button5" ng-click="position = undefined">ALL</button>
+			<button class="button button2" ng-click="position = 'boss'">BOSS</button>
+			<button class="button button3" ng-click="position = 'coworker'">COWORKER</button>
+
 			<ul>
-				<li ng-repeat="player in $ctrl.players | position:position" ng-class="{
-					boss : player.position === 'boss',
-					coworker : player.position === 'coworker'
+				<li ng-repeat="employee in $ctrl.employees | position:position" ng-class="{
+					boss : employee.position === 'boss',
+					coworker : employee.position === 'coworker'
 				}">
 					<p>
-						{{ player.name }}
-						<span>{{ player.position }}</span>
+						{{ employee.name }}
+						<span>{{ employee.position }}</span>
 					</p>
 				</li>
 			</ul>
-			
 		</div>
     `,
-    controller: function() {
-        	this.players = [{
-		name: 'Bart Simpson',
-		position: 'coworker'
-	},{
-		name: 'Seymour Skinner',
-		position: 'boss'
-	},{
-		name: 'Homero Simpson',
-		position: 'coworker'
-	},{
-		name: 'Moe Szyslak',
-		position: 'coworker'
-	}];
-    }
+    controller: function($transitions) {
+		this.employees = [{
+			name: 'Bart Simpson',
+			position: 'coworker'
+		},{
+			name: 'Seymour Skinner',
+			position: 'boss'
+		},{
+			name: 'Homero Simpson',
+			position: 'coworker'
+		},{
+			name: 'Moe Szyslak',
+			position: 'coworker'
+		}];
+
+		this.uiCanExit = function () {
+			console.log('Exiting...');
+			return window.confirm('Are you sure you want to leave?');
+		};
+	}
 };
 
 angular

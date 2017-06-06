@@ -7,7 +7,7 @@
 		ul { margin: 0; padding: 0; border-radius: 3px; overflow: hidden; }
 		ul li { overflow: hidden; padding: 0 15px; }
 		.boss { background: #2c3e50; color: #fff; }
-		.coworker { background: #B0C4DE; color: #fff; }
+		.coworker { background: #9999ff; color: #fff; }
 		</style>
 	</head>
 	<body>
@@ -15,7 +15,7 @@
 			<header class="header">
 				<ul class="header__labels">
 					<li>
-						<a href="#/">HOME</a>
+						<a ui-sref="home" ui-sref-active="active">HOME</a>
 					</li>
 				</ul>
 			</header>
@@ -28,5 +28,6 @@
 		<script src="js/filters/position.js"></script>
 		<script src="js/components/home/inbox/inbox.component.js"></script>
 		<script src="js/components/home/create/create.component.js"></script>		
+		<script src="js/components/home/inbox/service.js"></script>	
 	</body>
 </html>

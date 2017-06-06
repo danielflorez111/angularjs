@@ -4,11 +4,11 @@ var home = {
             <div class="contact-methods">
                 <div>
 			        <ul>
-				        <li>
-					        <a href="#/create">CREATE</a>
+				        <li ui-sref-active="active">
+					        <a ui-sref="create">CREATE</a>
 				        </li>
-				        <li>
-					        <a href="#/inbox">INBOX</a>
+				        <li ui-sref-active="active">
+					        <a ui-sref="inbox">INBOX</a>
 				        </li>
 			        </ul>
 		        </div>

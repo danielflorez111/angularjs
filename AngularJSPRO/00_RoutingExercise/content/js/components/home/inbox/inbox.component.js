@@ -1,6 +1,9 @@
 var inbox = {
+	bindings: {
+		data: '<'
+	},
     template: `
-        <div>Email: daniel.florez@yuxiglobal.com</div>
+        <pre> {{ $ctrl.data | json }} </pre>
     `
 };
 
@@ -12,6 +15,11 @@ angular
             .state("inbox", {
                 parent: "home",
                 url: "^/inbox",
-                component: "inbox"
+                component: "inbox",
+				resolve: {
+					data: function (Service) {
+						return Service.getData();
+					}
+				}
             });
     });
