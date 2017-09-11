@@ -3,7 +3,7 @@ function enviarMision(xmen) {
     console.log("Enviando a: " + xmen.nombre);
 }
 var wolverine = {
-    nombreXmen: "Wolverine",
+    nombre: "Wolverine",
     poder: "Regeneracion"
 };
 enviarMision(wolverine);

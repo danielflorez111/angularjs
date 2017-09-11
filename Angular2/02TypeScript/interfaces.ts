@@ -1,9 +1,15 @@
-function enviarMision(xmen:any) {
+interface Xmen {
+    nombre:string,
+    poder:string
+}
+
+
+function enviarMision(xmen : Xmen) {
     console.log("Enviando a: " + xmen.nombre);
 }
 
-let wolverine = {
-    nombreXmen : "Wolverine",
+let wolverine:Xmen = {
+    nombre : "Wolverine",
     poder : "Regeneracion"
 };
 
