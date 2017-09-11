@@ -1,0 +1,14 @@
+"use strict";
+var nombre = "Peter";
+var numero = 123;
+var bool = true;
+var hoy = new Date("09-11-2017");
+console.log(nombre);
+console.log(numero);
+console.log(bool);
+console.log(hoy);
+var cualquiera;
+cualquiera = nombre;
+cualquiera = numero;
+cualquiera = bool;
+cualquiera = hoy;
