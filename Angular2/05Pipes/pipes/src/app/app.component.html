@@ -1,0 +1,65 @@
+<div class="container">
+  <br>
+  <h1>Pipes</h1>
+  <hr>
+
+  <table class="table">
+    <thead class="thead-default">
+      <tr>
+        <th>Variable</th>
+        <th>Pipe</th>
+        <th>Producto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row"> {{ nombre }} </th>
+        <td> uppercase </td>
+        <td> {{ nombre | uppercase }} </td>
+      </tr>
+      <tr>
+        <th scope="row"> {{ nombre }} </th>
+        <td> lowercase </td>
+        <td> {{ nombre | lowercase }} </td>
+      </tr>
+      <tr>
+        <th scope="row"> {{ nombre }} </th>
+        <td> slice:3 </td>
+        <td> {{ nombre | slice:3 }} </td>
+      </tr>
+      <tr>
+        <th scope="row"> {{ PI }} </th>
+        <td> number </td>
+        <td> {{ PI | number:'1.0-2' }} </td>
+      </tr>
+      <tr>
+        <th scope="row"> {{ a }} </th>
+        <td> percent </td>
+        <td> {{ a | percent }} </td>
+      </tr>
+      <tr>
+        <th scope="row"> {{ salario }} </th>
+        <td> salario </td>
+        <td> {{ salario | currency:'EUR':true }} </td>
+      </tr>
+      <tr>
+          <th scope="row"> {{ valorDePromesa }} </th>
+          <td> async </td>
+          <td> {{ valorDePromesa | async }} </td>
+      </tr>
+      <tr>
+          <th scope="row"> {{ fecha }} </th>
+          <td> date </td>
+          <td> {{ fecha | date }} </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+  <h4>Json</h4>
+  <pre>
+    {{ heroe | json }}
+  </pre>
+
+</div>
+
