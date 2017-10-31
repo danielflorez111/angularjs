@@ -52,6 +52,11 @@
           <td> date </td>
           <td> {{ fecha | date }} </td>
       </tr>
+      <tr>
+        <th scope="row"> {{ nombre2 }} </th>
+        <td> capitalizado </td>
+        <td> {{ nombre2 | capitalizado }} </td>
+      </tr>
     </tbody>
   </table>
 
@@ -60,6 +65,10 @@
   <pre>
     {{ heroe | json }}
   </pre>
+
+  <h4>Video</h4>
+  <hr>
+  <iframe width="560" height="315" [src]="video | domseguro:'https://www.youtube.com/embed/'" frameborder="0" allowfullscreen></iframe>
 
 </div>
 
