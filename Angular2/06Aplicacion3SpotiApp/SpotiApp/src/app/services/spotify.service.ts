@@ -6,10 +6,10 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class SpotifyService {
 
-  artistas:any [] = [];
+  artistas:any;
   urlBusqueda:string = "https://api.spotify.com/v1/search";
   urlArtista:string = "https://api.spotify.com/v1/artists";
-  token:string = "Bearer BQBX0RmeFMa0f58GncEGVd46S6KB7HOUeU7G3Yderi7ux03vVKdu3EojumIYT_tz2wpEr_s7KXgb-SQ3t2bxJw"
+  token:string = "Bearer BQAwCrWeYvNZjt4Nni3C2wJIuUDR1SYjgBcn43KAZ19_exVXMjwLdVBZ8MusLuWI3cyKoxNtW7cssD8c0ShPCg"
 
   constructor(private http:Http) { }
 
