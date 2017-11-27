@@ -7,9 +7,12 @@ var animals = [
   { name: 'Jimmy',      species: 'fish' }
 ]
 
+/*
 var dogs = animals.filter(function(animal){
   return animal.species === "dog"
-})
+})*/
+
+var cats = animals.filter(animal =>  animal.species === "cat");
 
 
 /*
@@ -19,7 +22,7 @@ for(var i = 0; i < animals.length; i++) {
   }
 }*/
 
-console.log(dogs)
+console.log(cats);
 
 
 
