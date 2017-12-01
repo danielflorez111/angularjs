@@ -9,6 +9,9 @@ import { ProtegidaComponent } from './components/protegida/protegida.component';
 
 import { APP_ROUTING } from './app.routes';
 
+import { AuthService } from './services/auth.service';
+import { AuthGuardService } from './services/auth-guard.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +24,10 @@ import { APP_ROUTING } from './app.routes';
     BrowserModule,
     APP_ROUTING
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    AuthGuardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
