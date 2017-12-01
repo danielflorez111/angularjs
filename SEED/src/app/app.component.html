@@ -1,0 +1,21 @@
+<div *ngFor="let item of items">
+  <h1>{{item.firstName}}</h1>
+  <ul>
+    <li appResaltar>{{item.firstName}} {{item.lastName}}</li>
+    <li>{{item.id}}</li>
+    <li>{{item.email}}</li>
+    <li>
+      <span [ngSwitch]="item.gender">
+      <p *ngSwitchCase="'Male'">
+        MALE      
+      </p>
+      <p *ngSwitchCase="'Female'">
+        FEMALE      
+      </p>
+      <p *ngSwitchDefault>
+        INTERSEX      
+      </p>
+      </span>
+    </li>
+  </ul>
+</div>
