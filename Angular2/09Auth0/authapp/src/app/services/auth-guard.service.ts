@@ -7,7 +7,7 @@ export class AuthGuardService implements CanActivate {
 
   constructor(private auth:AuthService) { }
 
-  canActivate(next:ActivatedRouteSnapshot, state:RouterStateSnapshot){
+  canActivate(next:ActivatedRouteSnapshot, state:RouterStateSnapshot) {
 
     console.log(next);
 
