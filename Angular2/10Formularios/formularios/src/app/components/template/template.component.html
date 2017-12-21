@@ -69,6 +69,35 @@
     </div>
   </div>
 
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Pais</label>
+    <div class="col-md-8">
+
+      <select name="pais" class="form-control" [(ngModel)]="usuario.pais">
+        <option value="">Seleccione un pais</option>
+        <option [value]="pais.codigo" *ngFor="let pais of paises"> {{ pais.nombre }}</option>
+      </select>
+
+    </div>
+  </div>
+  
+  <div class="form-group row">
+      <label class="col-2 col-form-label">Sexo</label>
+      <div class="col-md-8">
+        
+        <label class="form-check-label" *ngFor="let s of sexos">
+          <input [(ngModel)]="usuario.sexo" [value]="s" name="sexo" type="radio">
+          {{ s }}
+        </label>
+        
+        <!--label class="form-check-label">
+          <input [(ngModel)]="usuario.sexo" value="Mujer" name="sexo" type="radio">
+          Mujer
+        </label-->
+
+      </div>
+  </div>
+
 
 
   <div class="form-group row">
