@@ -29,10 +29,15 @@
             <td> {{ heroes[k].casa }} </td>
             <td>
               <button class="btn btn-light" [routerLink]="['/heroe', k]">Editar</button>
+              <button class="btn btn-light" (click)="borraHeroe(k)">Eliminar</button>
             </td>
           </tr>
         </tbody>
       </table>
+      
+      <div class="alert alert-info" role="alert" *ngIf="(heroes | keys).length === 0 && !loading">
+        No hay registros
+      </div>
 
     </div>
   </div>
