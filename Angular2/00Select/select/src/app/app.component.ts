@@ -9,16 +9,18 @@ import { State } from './state';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  selectedCountry:Country = new Country(0, ''); 
+  selectedCountry: Country = new Country(0, '');
   countries: Country[];
   states: State[];
-  
+  text: string;
+
   constructor(private _dataService: DataService) {
     this.countries = this._dataService.getCountries();
+    this.text = `tesx text text text text text`;
   }
-  
+
   onSelect(countryid) {
-    this.states = this._dataService.getStates().filter((item)=> item.countryid == countryid);
+    this.states = this._dataService.getStates().filter((item) => item.countryid == countryid);
   }
 
 }
