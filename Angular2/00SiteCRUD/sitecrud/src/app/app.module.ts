@@ -8,11 +8,13 @@ import { MatInputModule } from '@angular/material/input';
 
 
 import { AppComponent } from './app.component';
+import { SiteListComponent } from './components/site-list/site-list.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SiteListComponent
   ],
   imports: [
     BrowserModule,
