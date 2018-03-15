@@ -58,6 +58,19 @@
   
   <button type="submit">Sign up</button>
 
+  <div formArrayName="items"
+  *ngFor="let item of user.get('items').controls; let i = index;">
+  <div [formGroupName]="i">
+    <input formControlName="name" placeholder="Item name">
+    <input formControlName="description" placeholder="Item description">
+    <input formControlName="price" placeholder="Item price">
+    <button type="button" (click)="removeItem(i)">Remove</button>
+  </div>
+
+</div>
+
+<button type="button" (click)="addItem()">Add</button>
+
 </form>
 
 {{ user.value | json }}
@@ -66,3 +79,6 @@
 
 
 <h3>[disabled]="user.invalid"</h3>
+
+
+

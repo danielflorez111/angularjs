@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { FormControl, FormGroup, Validators, FormBuilder, FormArray } from '@angular/forms';
 import { User } from './user.interface';
 
 @Component({
@@ -8,13 +8,14 @@ import { User } from './user.interface';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  
-  user: FormGroup;
 
-  constructor(private fb:FormBuilder) {
-    
+  user: FormGroup;
+  items: FormArray;
+
+  constructor(private fb: FormBuilder) {
+
   }
-  
+
   // Using FormGroup and FormControl
   /*
   ngOnInit() {
@@ -35,11 +36,29 @@ export class AppComponent implements OnInit {
       account: this.fb.group({
         email: ['', Validators.required],
         confirm: ['', Validators.required]
-      })
+      }),
+      items: this.fb.array([this.createItem()])
     });
   }
 
-  
+  createItem(): FormGroup {
+    return this.fb.group({
+      name: '',
+      description: '',
+      price: ''
+    });
+  }
+
+  addItem(): void {
+    this.items = this.user.get('items') as FormArray;
+    this.items.push(this.createItem());
+  }
+
+  removeItem(i): void {
+    console.log(i);
+    this.items.removeAt(i);
+  }
+
   onSubmit() {
     console.log(this.user.value, this.user.valid);
     console.log(this.user);
