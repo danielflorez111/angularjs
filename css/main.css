@@ -1,8 +1,12 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
 #product-overview {
     background: red;
 }
 
-h1 {
+#product-overview h1 {
     color: white;
     font-family: 'Anton', sans-serif;
 }
