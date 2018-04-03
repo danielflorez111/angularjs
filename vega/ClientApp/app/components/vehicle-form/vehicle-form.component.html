@@ -12,8 +12,18 @@
   <div class="form-group">
     <label for="model">Model</label>
     <select id="model" class="form-control">
-        <option value=""></option>
-        <option *ngFor="let m of models" value="{{ m.id }}"> {{ m.name }} </option>
+      <option value=""></option>
+      <option *ngFor="let m of models" value="{{ m.id }}"> {{ m.name }} </option>
     </select>
   </div>
+
+  <h2>Features</h2>
+
+  <div class="form-check" *ngFor="let f of features">
+    <input class="form-check-input" type="checkbox" value="" id="feature{{ f.id }}">
+    <label class="form-check-label" for="feature{{ f.id }}">
+      {{ f.name }}
+    </label>
+  </div>
+
 </form>
