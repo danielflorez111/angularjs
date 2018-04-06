@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0px;
+    height: 100%;
+}
+
+.grid-container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+
+.left {
+    background: rgba(0, 0, 0, .27);;
+}
+
+.right {
+    background: red;
+}
