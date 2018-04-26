@@ -1,15 +1,22 @@
 <mat-card>
-  <mat-card-title>Mapa</mat-card-title>
 
-  <mat-card-content>
+  <mat-card-content *ngIf="location">
 
-    <agm-map (mapClick)="agregarMarcador($event)" [latitude]="lat" [longitude]="lng" [zoom]="15">
+    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="17">
 
-      <agm-marker *ngFor="let marcador of marcadores; let i = index" [latitude]="marcador.lat" [longitude]="marcador.lng">
+      <agm-circle [latitude]="location.lat" [longitude]="location.lng" [radius]="100">
+
+      </agm-circle>
+
+      <agm-marker (dragEnd)="bla($event)" [markerDraggable]="true" [latitude]="location.lat" [longitude]="location.lng">
+
+      </agm-marker>
+
+      <agm-marker *ngFor="let device of devices; let i = index" [latitude]="device.lat" [longitude]="device.lng">
 
         <agm-info-window>
-          <strong> {{ marcador.titulo }} </strong>
-          <p> {{ marcador.desc }} </p>
+          <strong> titulo </strong>
+          <p> desc </p>
           <div>
             <button mat-raised-button color="primary">Editar</button>
             <button (click)="borrarMarcador(i)" mat-raised-button color="warn">Borrar</button>

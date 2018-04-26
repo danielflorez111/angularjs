@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
 import { Marcador } from '../../classes/marcador.class';
+import { DeviceService } from '../../services/device.service';
+import { IDevice } from '../../interfaces/device.interface';
+import { ILocation } from '../../interfaces/location.interface';
 
 @Component({
   selector: 'app-mapa',
@@ -9,17 +12,15 @@ import { Marcador } from '../../classes/marcador.class';
 })
 export class MapaComponent implements OnInit {
 
+  devices: IDevice[] = [];
+  location: ILocation;
   marcadores: Marcador[] = []
-  lat: number = 51.678418;
-  lng: number = 7.809007;
+  lat: number = 6.1927566999999994;
+  lng: number = -75.59531129999999;
 
-  constructor(public snackBar: MatSnackBar) {
-    // const nuevoMarcador = new Marcador(51.678418, 7.809007);
-    // this.marcadores.push(nuevoMarcador);
-
-    if (localStorage.getItem('marcadores')) {
-      this.marcadores = JSON.parse(localStorage.getItem('marcadores'));
-    }
+  constructor(public snackBar: MatSnackBar, private _deviceService: DeviceService) {
+    this.devices = this._deviceService.getDevices();
+    this.setLocation();
   }
 
   ngOnInit() {
@@ -42,6 +43,31 @@ export class MapaComponent implements OnInit {
 
   guardarStorage() {
     localStorage.setItem('marcadores', JSON.stringify(this.marcadores));
+  }
+
+  setLocation(location?: ILocation) {
+    if (!location && navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        this.location = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+        console.log("jaja", this.location);
+      });
+    } else {
+      this.location = {
+        lat: location.lat,
+        lng: location.lng
+      };
+    }
+  }
+
+  bla(event) {
+    this.devices.map((device) => {
+      device.distance = 1;
+    });
+    this.setLocation(event.coords);
+    console.log(this.devices);
   }
 
 }
