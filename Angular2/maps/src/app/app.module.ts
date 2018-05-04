@@ -21,7 +21,8 @@ import { AgmCoreModule } from '@agm/core';
     BrowserAnimationsModule,
     MaterialModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBxa_9f44lAmCRS2HNo_ipW2EsJx6J2LJ4'
+      apiKey: 'AIzaSyBxa_9f44lAmCRS2HNo_ipW2EsJx6J2LJ4',
+      libraries: ['geometry']
     })
   ],
   providers: [
