@@ -20,7 +20,11 @@ export class MapaComponent implements OnInit {
 
   constructor(public snackBar: MatSnackBar, private _deviceService: DeviceService) {
     this.devices = this._deviceService.getDevices();
-    this.setLocation();
+    //this.setLocation();
+
+    this.test().then((position) => {
+      console.log(position);
+    })
   }
 
   ngOnInit() {
@@ -68,6 +72,12 @@ export class MapaComponent implements OnInit {
     });
     this.setLocation(event.coords);
     console.log(this.devices);
+  }
+
+  test() {
+    return new Promise((resolve, reject) => {
+      navigator.geolocation.getCurrentPosition(resolve, reject);
+    });
   }
 
 }
