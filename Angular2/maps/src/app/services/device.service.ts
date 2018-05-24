@@ -7,21 +7,21 @@ export class DeviceService {
   private devices: IDevice[] = [
     {
       id: 1,
-      title: 'Parque de las Chimeneas',
-      lat: 6.192440,
-      lng: -75.592663
+      title: 'Mercados del Rio',
+      lat: 6.226702,
+      lng: -75.575423
     },
     {
       id: 2,
       title: 'Centro de la moda',
-      lat: 6.190444,
-      lng: -75.595250
+      lat: 6.222734,
+      lng: -75.574972
     },
     {
       id: 3,
-      title: 'Cancha',
-      lat: 6.193059,
-      lng: -75.595905
+      title: 'Gabriel Garcia Marquez',
+      lat: 6.219673,
+      lng: -75.571464
     }
   ];
 

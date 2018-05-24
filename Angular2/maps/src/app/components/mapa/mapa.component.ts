@@ -4,6 +4,7 @@ import { Marcador } from '../../classes/marcador.class';
 import { DeviceService } from '../../services/device.service';
 import { IDevice } from '../../interfaces/device.interface';
 import { ILocation } from '../../interfaces/location.interface';
+declare var google: any;
 
 @Component({
   selector: 'app-mapa',
@@ -15,8 +16,8 @@ export class MapaComponent implements OnInit {
   devices: IDevice[] = [];
   location: ILocation;
   marcadores: Marcador[] = []
-  lat: number = 6.1927566999999994;
-  lng: number = -75.59531129999999;
+  lat: number = 6.2250704;
+  lng: number = -75.57404319999999;
 
   constructor(public snackBar: MatSnackBar, private _deviceService: DeviceService) {
     this.devices = this._deviceService.getDevices();
@@ -68,10 +69,17 @@ export class MapaComponent implements OnInit {
 
   bla(event) {
     this.devices.map((device) => {
-      device.distance = 1;
+      let deviceLocation = new google.maps.LatLng(device.lat, device.lng);
+      let currentLocation = new google.maps.LatLng(this.location.lat, this.location.lng);
+      device.distance = google.maps.geometry.spherical.computeDistanceBetween(deviceLocation, currentLocation);
     });
     this.setLocation(event.coords);
     console.log(this.devices);
+
+    // let coord1 = new google.maps.LatLng(6.223604, -75.572741);
+    // let coord2 = new google.maps.LatLng(6.223646, -75.575402);
+    // let distance = google.maps.geometry.spherical.computeDistanceBetween(coord1, coord2);
+    // console.log("distance", distance);
   }
 
   test() {
