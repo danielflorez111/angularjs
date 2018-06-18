@@ -1,0 +1,23 @@
+.reveal-overlay { 
+    background: rgba(0,0,0,0.6); 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+}
+
+.reveal { 
+    background: white; 
+    width: 90%; 
+    margin: 40px auto; 
+    min-height: 70vh; 
+    position: relative; 
+    padding: 20px; 
+}
+
+.close-button { 
+    position: absolute; 
+    right: 10px; 
+    top: 10px; 
+}

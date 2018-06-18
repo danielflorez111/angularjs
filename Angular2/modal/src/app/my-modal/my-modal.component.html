@@ -1,0 +1,11 @@
+<div class="reveal-overlay" (click)="clickOverlay($event)" [hidden]="!show">
+  <div class="reveal">
+    <ng-content></ng-content>
+    <button class="close-button" (click)="toggle()">
+      <span>&times;</span>
+    </button>
+
+    <div *ngIf="name === 'hello'">Hola mundo</div>
+    <div *ngIf="name === 'bye'">Chao todos</div>
+  </div>
+</div>
