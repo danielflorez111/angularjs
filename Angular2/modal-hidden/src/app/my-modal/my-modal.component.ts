@@ -15,6 +15,7 @@ export class MyModalComponent implements OnInit {
   ngOnInit() {
     this.myModals.set(this.name, this);
     console.log(this.name);
+    console.log(this);
   }
 
   clickOverlay(event: Event) {
