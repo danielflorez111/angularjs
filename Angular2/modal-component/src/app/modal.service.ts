@@ -1,8 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { DomService } from './dom.service';
+import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class ModalService {
+
+  sayHello = new Subject<any>();
 
   constructor(private domService: DomService) { }
 
@@ -23,5 +26,9 @@ export class ModalService {
     this.domService.removeComponent();
     document.getElementById(this.modalElementId).className = 'hidden';
     document.getElementById(this.overlayElementId).className = 'hidden';
+  }
+
+  event() {
+    this.sayHello.next('Cabrones');
   }
 }

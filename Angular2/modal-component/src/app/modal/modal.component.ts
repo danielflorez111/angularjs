@@ -1,5 +1,5 @@
 import { ModalService } from './../modal.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-custom-modal',
@@ -9,6 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class ModalComponent implements OnInit {
 
   constructor(private modalService: ModalService) {
+  }
+
+  saludar() {
+    this.modalService.event();
   }
 
   ngOnInit() {

@@ -11,7 +11,7 @@ export class AppComponent {
   title = 'app';
 
   constructor(private modalService: ModalService) {
-
+    this.modalService.sayHello.subscribe((data) => this.saludar());
   }
 
   initModal() {
@@ -24,5 +24,9 @@ export class AppComponent {
 
   removeModal() {
     this.modalService.destroy();
+  }
+
+  saludar() {
+    console.log('Hola, Daniel Flórez');
   }
 }
