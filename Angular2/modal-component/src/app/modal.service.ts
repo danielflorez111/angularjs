@@ -19,13 +19,19 @@ export class ModalService {
     }
     this.domService.appendComponentTo(this.modalElementId, component, componentConfig);
     document.getElementById(this.modalElementId).className = 'show';
-    document.getElementById(this.overlayElementId).className = 'show';
+    document.getElementById(this.overlayElementId).className = 'show-backdrop';
   }
 
   destroy() {
-    this.domService.removeComponent();
-    document.getElementById(this.modalElementId).className = 'hidden';
-    document.getElementById(this.overlayElementId).className = 'hidden';
+    document.getElementById(this.modalElementId).className = 'animate';
+
+    setTimeout(() => {
+      this.domService.removeComponent();
+      document.getElementById(this.modalElementId).className = 'hidden';
+      document.getElementById(this.overlayElementId).className = 'hidden';
+    }, 500);
+
+
   }
 
   event() {

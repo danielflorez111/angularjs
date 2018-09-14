@@ -11,12 +11,31 @@ html, body {
 
 
 /* Custom Modal */
+@keyframes go-left-right {        /* give it a name: "go-left-right" */
+  from { left: -20%; }             /* animate from left: 0px */
+  to { left: 50% } /* animate to left: 100%-50px */
+}
+
+@keyframes go-right-left {        /* give it a name: "go-left-right" */
+  from { left: 50%; }             /* animate from left: 0px */
+  to { left: -20% } /* animate to left: 100%-50px */
+}
+
 .hidden{
-  display:none;
+  visibility:hidden;
+}
+
+.animate {
+  animation: go-right-left 0.6s;
 }
 
 .show{
-  display:block;
+  visibility:visible;
+  animation: go-left-right 0.6s;
+}
+
+.show-backdrop{
+  visibility:visible;
 }
 
 #modal-container {
