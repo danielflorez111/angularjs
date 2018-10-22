@@ -1,0 +1,7 @@
+<button (click)="callService()">Call Marketplace service</button>
+
+<div *ngIf="users">
+    <div *ngFor="let user of users">
+        {{user.name}}
+    </div>
+</div>
