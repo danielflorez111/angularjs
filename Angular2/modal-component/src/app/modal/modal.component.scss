@@ -1,0 +1,23 @@
+.decommission-dialog-content {
+  width: 560px;
+  padding: 0 24px 24px;
+  text-align: left;
+  border-bottom: 1px solid rgba(0,0,0,.27);
+
+  .title {
+      padding-bottom: 8px;
+      font-weight: 600;
+
+      span {
+          font-weight: 600;
+      }
+  }
+  
+  .question {
+      padding-bottom: 8px;
+  }
+
+  .info {
+
+  }
+}
