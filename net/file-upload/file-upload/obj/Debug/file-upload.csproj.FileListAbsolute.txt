@@ -74,3 +74,7 @@ C:\angularjs\net\file-upload\file-upload\obj\Debug\file-upload.pdb
 C:\angularjs\net\file-upload\file-upload\bin\System.Web.Cors.dll
 C:\angularjs\net\file-upload\file-upload\bin\System.Web.Http.Cors.dll
 C:\angularjs\net\file-upload\file-upload\bin\System.Web.Http.Cors.xml
+C:\angularjs\net\file-upload\file-upload\bin\EntityFramework.dll
+C:\angularjs\net\file-upload\file-upload\bin\EntityFramework.SqlServer.dll
+C:\angularjs\net\file-upload\file-upload\bin\EntityFramework.xml
+C:\angularjs\net\file-upload\file-upload\bin\EntityFramework.SqlServer.xml

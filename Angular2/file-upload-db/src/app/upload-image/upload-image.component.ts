@@ -1,3 +1,4 @@
+import { UploadImageService } from './../shared/upload-image.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,7 +11,7 @@ export class UploadImageComponent implements OnInit {
   imageUrl: string = "/assets/img/default.png";
   fileToUpload: File = null;
 
-  constructor() { }
+  constructor(private _uploadImageService: UploadImageService) { }
 
   ngOnInit() {
   }
@@ -24,6 +25,15 @@ export class UploadImageComponent implements OnInit {
       this.imageUrl = event.target.result;
     }
     reader.readAsDataURL(this.fileToUpload);
+  }
+
+  OnSubmit(Caption, Image) {
+    this._uploadImageService.postFile(Caption.value, this.fileToUpload).subscribe(data => {
+      console.log('Done');
+      Caption.value = null;
+      Image.value = null;
+      this.imageUrl = "/assets/img/default.png";
+    });
   }
 
 }
